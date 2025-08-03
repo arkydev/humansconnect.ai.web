@@ -3,12 +3,60 @@
 </script>
 
 <svelte:head>
-	<title>Humans Connect AI</title>
-	<meta name="description" content="Connect with like-minded people through intelligent matching and shared interests." />
+	<title>Humans Connect AI - Smart Matching Platform for Meaningful Connections</title>
+	<meta name="description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication. Launching Q4 2025." />
+	<meta name="keywords" content="human connections, AI matching, networking platform, meaningful relationships, smart matching, privacy-focused, social networking" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://humansconnect.ai" />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://humansconnect.ai" />
+	<meta property="og:title" content="Humans Connect AI - Smart Matching Platform for Meaningful Connections" />
+	<meta property="og:description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication." />
+	<meta property="og:image" content="https://humansconnect.ai/favicon.png" />
+	<meta property="og:site_name" content="Humans Connect AI" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://humansconnect.ai" />
+	<meta property="twitter:title" content="Humans Connect AI - Smart Matching Platform for Meaningful Connections" />
+	<meta property="twitter:description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication." />
+	<meta property="twitter:image" content="https://humansconnect.ai/favicon.png" />
+	
+	<!-- Additional SEO -->
+	<meta name="author" content="Humans Connect AI" />
+	<meta name="theme-color" content="#0a0a0a" />
 	<link rel="icon" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/favicon.png" />
+	
+	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	
+	<!-- JSON-LD Structured Data -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Humans Connect AI",
+			"description": "AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains with smart matching and privacy-first authentication.",
+			"url": "https://humansconnect.ai",
+			"applicationCategory": "SocialNetworkingApplication",
+			"operatingSystem": "Web",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"creator": {
+				"@type": "Organization",
+				"name": "Humans Connect AI"
+			}
+		}
+	</script>
 </svelte:head>
 
 <div class="min-h-screen xl:h-screen bg-neutral-50 flex flex-col font-['Inter']">
@@ -17,7 +65,7 @@
 		<div class="max-w-7xl mx-auto flex justify-between items-center">
 			<div class="flex items-center gap-3 sm:gap-4">
 				<div class="w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
-				<div class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide">Humans</div>
+				<h1 class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide">Humans</h1>
 			</div>
 			<div class="flex items-center gap-2">
 				<div class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></div>
@@ -35,10 +83,10 @@
 			<!-- Hero -->
 			<div class="space-y-6 sm:space-y-8 text-center lg:text-left">
 				<div class="space-y-4 sm:space-y-6">
-					<h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
+					<h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
 						Connect with<br>
 						<span class="font-normal text-neutral-700">Like-minded People</span>
-					</h1>
+					</h2>
 					
 					<p class="text-base sm:text-lg text-neutral-600 font-light max-w-md mx-auto lg:mx-0">
 						Discover meaningful connections through intelligent matching and shared interests.
@@ -57,22 +105,22 @@
 			<div class="space-y-8 sm:space-y-12 flex flex-col items-center xl:items-start">
 				<div class="space-y-6 sm:space-y-8 max-w-md xl:max-w-none xl:grid xl:grid-cols-2 xl:gap-x-8 xl:gap-y-8 xl:space-y-0">
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<div class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Smart Matching</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Smart Matching</h3>
 						<div class="text-neutral-600 text-sm leading-relaxed">AI finds people you'll actually connect with</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<div class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Privacy Focused</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Privacy Focused</h3>
 						<div class="text-neutral-600 text-sm leading-relaxed">Your data stays private and secure</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<div class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Real Connections</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Real Connections</h3>
 						<div class="text-neutral-600 text-sm leading-relaxed">Move beyond small talk to meaningful relationships</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<div class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Universal Platform</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Universal Platform</h3>
 						<div class="text-neutral-600 text-sm leading-relaxed">Romance, business, creative, athletic — connections across all life domains</div>
 					</div>
 				</div>
