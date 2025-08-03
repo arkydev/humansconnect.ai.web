@@ -105,18 +105,18 @@
 			<div class="space-y-8 sm:space-y-12 flex flex-col items-center xl:items-start">
 				<div class="space-y-6 sm:space-y-8 max-w-md xl:max-w-none xl:grid xl:grid-cols-2 xl:gap-x-8 xl:gap-y-8 xl:space-y-0">
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Smart Matching</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">AI finds people you'll actually connect with</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Intelligent Matching</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">AI matches based on who you are, not how you look</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
 						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Privacy Focused</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">Your data stays private and secure</div>
+						<div class="text-neutral-600 text-sm leading-relaxed">Private and secure, with optional anonymity</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Real Connections</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">Move beyond small talk to meaningful relationships</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Authentic Connections</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">Find people who share your core values and worldview</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
