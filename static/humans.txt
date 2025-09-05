@@ -1,0 +1,42 @@
+/* TEAM */
+  
+  Developer: Humans Connect AI Team
+  Location: Global
+  
+/* SITE */
+
+  Last update: 2025/09/05
+  Language: English
+  Doctype: HTML5
+  
+/* CONTACT */
+
+  Email: humansconnectai@gmail.com
+  Twitter: @humansconnectai
+  X: @humansconnectai
+  
+---
+
+ /$$   /$$                                                           
+| $$  | $$                                                           
+| $$  | $$ /$$   /$$ /$$$$$$/$$$$   /$$$$$$  /$$$$$$$   /$$$$$$$     
+| $$$$$$$$| $$  | $$| $$_  $$_  $$ |____  $$| $$__  $$ /$$_____/     
+| $$__  $$| $$  | $$| $$ \ $$ \ $$  /$$$$$$$| $$  \ $$|  $$$$$$      
+| $$  | $$| $$  | $$| $$ | $$ | $$ /$$__  $$| $$  | $$ \____  $$     
+| $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$| $$  | $$ /$$$$$$$/     
+|__/  |__/ \______/ |__/ |__/ |__/ \_______/|__/  |__/|_______/      
+
+         /$$$$$$                                                  /$$    
+        /$$__  $$                                                | $$    
+       | $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$$| $$    
+       | $$       /$$__  $$| $$__  $$| $$__  $$ /$$__  $$ /$$_____/| $$    
+       | $$      | $$  \ $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$      | $$    
+       | $$    $$| $$  | $$| $$  | $$| $$  | $$| $$_____/| $$      | $$    
+       |  $$$$$$/|  $$$$$$/| $$  | $$| $$  | $$|  $$$$$$$|  $$$$$$$| $$    
+        \______/  \______/ |__/  |__/|__/  |__/ \_______/ \_______/|__/    
+
+/* PHILOSOPHY */
+
+We believe in meaningful connections powered by AI, not algorithms.
+Privacy-first, human-centered technology.
+Building the future of authentic relationships.
