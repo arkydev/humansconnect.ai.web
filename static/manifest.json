@@ -1,0 +1,41 @@
+{
+  "name": "Humans Connect AI",
+  "short_name": "Humans",
+  "description": "AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f5f5",
+  "theme_color": "#0a0a0a",
+  "categories": ["social", "networking", "lifestyle"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "scope": "/",
+  "id": "humansconnect-ai",
+  "launch_handler": {
+    "client_mode": "navigate-new"
+  },
+  "edge_side_panel": {
+    "preferred_width": 480
+  }
+}
