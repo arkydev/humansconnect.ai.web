@@ -149,8 +149,7 @@
 	{#each PERFORMANCE.DNS_PREFETCH as domain}
 		<link rel="dns-prefetch" href={domain} />
 	{/each}
-	<link rel="preload" href={PERFORMANCE.PRELOAD_FONTS} as="style" onload="this.onload=null;this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href={PERFORMANCE.PRELOAD_FONTS} /></noscript>
+	<link rel="preload" href={PERFORMANCE.PRELOAD_FONTS} as="style" />
 	
 	<!-- Fonts -->
 	<link rel="preconnect" href={Urls.FONTS_PRECONNECT}>
@@ -168,7 +167,7 @@
 	</a>
 	
 	<!-- Header -->
-	<header class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8" role="banner">
+	<header class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8">
 		<div class="max-w-7xl mx-auto flex justify-between items-center">
 			<div class="flex items-center gap-3 sm:gap-4">
                 <div class="w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
@@ -184,7 +183,7 @@
 	</header>
 
 	<!-- Main Content -->
-	<main id="main-content" class="flex-1 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-4 sm:py-8" role="main">
+	<main id="main-content" class="flex-1 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-4 sm:py-8">
 		<div class="max-w-7xl mx-auto xl:grid xl:grid-cols-2 xl:gap-24 xl:h-full xl:items-center space-y-12 sm:space-y-16 xl:space-y-0">
 			
 			<!-- Hero -->
@@ -237,7 +236,7 @@
 	</main>
 
 	<!-- Footer -->
-	<footer class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8" role="contentinfo">
+	<footer class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8">
 		<div class="max-w-7xl mx-auto">
 			<div class="h-px bg-neutral-200 mb-6 sm:mb-8"></div>
 			<div class="flex justify-between items-center text-sm text-neutral-400">
