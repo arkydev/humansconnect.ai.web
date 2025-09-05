@@ -6,7 +6,7 @@ export const APP_METADATA = {
   SHORT_DESCRIPTION: 'AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication. Launching Q4 2025.',
   AUTHOR: 'Humans Connect AI',
   VERSION: 'v0.1',
-  COPYRIGHT: '© 2025',
+  COPYRIGHT: 'Humans Connect AI © 2025',
   LAUNCH_TEXT: 'Launching Q4 2025',
   STATUS_TEXT: 'Private Beta'
 } as const;
