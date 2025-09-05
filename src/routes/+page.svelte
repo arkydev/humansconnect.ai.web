@@ -174,7 +174,7 @@
                 <div class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide" aria-label="Humans Connect AI brand">{HERO_CONTENT.BRAND_NAME}</div>
 			</div>
 			<div class="flex items-center gap-2">
-				<div class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></div>
+				<div class="w-1.5 h-1.5 bg-neutral-400 rounded-full relative -top-px"></div>
 				<div class="text-xs text-neutral-500 font-mono uppercase tracking-wider">
 					{APP_METADATA.STATUS_TEXT}
 				</div>
@@ -251,8 +251,8 @@
 	<footer class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8">
 		<div class="max-w-7xl mx-auto">
 			<div class="h-px bg-neutral-200 mb-6 sm:mb-8"></div>
-			<div class="flex justify-between items-center text-sm text-neutral-400">
-				<div>{APP_METADATA.COPYRIGHT}</div>
+			<div class="flex justify-between items-center text-neutral-400">
+				<div class="font-mono text-xs">{APP_METADATA.COPYRIGHT}</div>
 				<div class="font-mono text-xs">{APP_METADATA.VERSION}</div>
 			</div>
 		</div>
