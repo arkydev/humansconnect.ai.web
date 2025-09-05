@@ -1,59 +1,61 @@
 <script lang="ts">
+	import { APP_METADATA, Urls, FILE_PATHS, MetaProperties, MetaContent, SchemaTypes, SCHEMA_DATA, FEATURES, HERO_CONTENT, SEO_KEYWORDS } from '$lib/constants';
+
 	let email = '';
 </script>
 
 <svelte:head>
-	<title>Humans Connect AI - Smart Matching Platform for Meaningful Connections</title>
-	<meta name="description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication. Launching Q4 2025." />
-	<meta name="keywords" content="human connections, AI matching, networking platform, meaningful relationships, smart matching, privacy-focused, social networking" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://humansconnect.ai" />
+	<title>{APP_METADATA.TITLE}</title>
+	<meta name="description" content={APP_METADATA.SHORT_DESCRIPTION} />
+	<meta name="keywords" content={SEO_KEYWORDS} />
+	<meta name="viewport" content={MetaContent.VIEWPORT} />
+	<meta name="robots" content={MetaContent.ROBOTS_INDEX_FOLLOW} />
+	<link rel="canonical" href={Urls.SITE} />
 	
 	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://humansconnect.ai" />
-	<meta property="og:title" content="Humans Connect AI - Smart Matching Platform for Meaningful Connections" />
-	<meta property="og:description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication." />
-	<meta property="og:image" content="https://humansconnect.ai/favicon.png" />
-	<meta property="og:site_name" content="Humans Connect AI" />
+	<meta property={MetaProperties.OG_TYPE} content={MetaContent.OG_TYPE_WEBSITE} />
+	<meta property={MetaProperties.OG_URL} content={Urls.SITE} />
+	<meta property={MetaProperties.OG_TITLE} content={APP_METADATA.TITLE} />
+	<meta property={MetaProperties.OG_DESCRIPTION} content={APP_METADATA.DESCRIPTION} />
+	<meta property={MetaProperties.OG_IMAGE} content={Urls.FAVICON_PNG} />
+	<meta property={MetaProperties.OG_SITE_NAME} content={APP_METADATA.NAME} />
 	
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://humansconnect.ai" />
-	<meta property="twitter:title" content="Humans Connect AI - Smart Matching Platform for Meaningful Connections" />
-	<meta property="twitter:description" content="AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains. Smart matching with privacy-first authentication." />
-	<meta property="twitter:image" content="https://humansconnect.ai/favicon.png" />
+	<meta property={MetaProperties.TWITTER_CARD} content={MetaContent.TWITTER_CARD_LARGE} />
+	<meta property={MetaProperties.TWITTER_URL} content={Urls.SITE} />
+	<meta property={MetaProperties.TWITTER_TITLE} content={APP_METADATA.TITLE} />
+	<meta property={MetaProperties.TWITTER_DESCRIPTION} content={APP_METADATA.DESCRIPTION} />
+	<meta property={MetaProperties.TWITTER_IMAGE} content={Urls.FAVICON_PNG} />
 	
 	<!-- Additional SEO -->
-	<meta name="author" content="Humans Connect AI" />
-	<meta name="theme-color" content="#0a0a0a" />
-	<link rel="icon" href="/favicon.png" />
-	<link rel="apple-touch-icon" href="/favicon.png" />
+	<meta name="author" content={APP_METADATA.AUTHOR} />
+	<meta name="theme-color" content={MetaContent.THEME_COLOR} />
+	<link rel="icon" href={FILE_PATHS.FAVICON_PNG} />
+	<link rel="apple-touch-icon" href={FILE_PATHS.FAVICON_PNG} />
 	
 	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="preconnect" href={Urls.FONTS_PRECONNECT}>
+	<link rel="preconnect" href={Urls.FONTS_STATIC_PRECONNECT} crossorigin>
+	<link href={Urls.INTER_FONT} rel="stylesheet">
 	
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
 		{
-			"@context": "https://schema.org",
-			"@type": "SoftwareApplication",
-			"name": "Humans Connect AI",
-			"description": "AI-powered platform connecting like-minded people across romance, business, creative, and athletic domains with smart matching and privacy-first authentication.",
-			"url": "https://humansconnect.ai",
-			"applicationCategory": "SocialNetworkingApplication",
-			"operatingSystem": "Web",
+			[SchemaTypes.CONTEXT]: Urls.SCHEMA_CONTEXT,
+			[SchemaTypes.TYPE]: SchemaTypes.SOFTWARE_APPLICATION,
+			"name": APP_METADATA.NAME,
+			"description": APP_METADATA.DESCRIPTION,
+			"url": Urls.SITE,
+			"applicationCategory": SCHEMA_DATA.APPLICATION_CATEGORY,
+			"operatingSystem": SCHEMA_DATA.OPERATING_SYSTEM,
 			"offers": {
-				"@type": "Offer",
-				"price": "0",
-				"priceCurrency": "USD"
+				[SchemaTypes.TYPE]: SchemaTypes.OFFER,
+				"price": SCHEMA_DATA.PRICE,
+				"priceCurrency": SCHEMA_DATA.PRICE_CURRENCY
 			},
 			"creator": {
-				"@type": "Organization",
-				"name": "Humans Connect AI"
+				[SchemaTypes.TYPE]: SchemaTypes.ORGANIZATION,
+				"name": APP_METADATA.NAME
 			}
 		}
 	</script>
@@ -65,12 +67,12 @@
 		<div class="max-w-7xl mx-auto flex justify-between items-center">
 			<div class="flex items-center gap-3 sm:gap-4">
 				<div class="w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
-				<h1 class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide">Humans</h1>
+				<h1 class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide">{HERO_CONTENT.BRAND_NAME}</h1>
 			</div>
 			<div class="flex items-center gap-2">
 				<div class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></div>
 				<div class="text-xs text-neutral-500 font-mono uppercase tracking-wider">
-					Private Beta
+					{APP_METADATA.STATUS_TEXT}
 				</div>
 			</div>
 		</div>
@@ -84,19 +86,19 @@
 			<div class="space-y-6 sm:space-y-8 text-center lg:text-left">
 				<div class="space-y-4 sm:space-y-6">
 					<h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
-						Connect with<br>
-						<span class="font-normal text-neutral-700">Like-minded People</span>
+						{HERO_CONTENT.HEADING_LINE_1}<br>
+						<span class="font-normal text-neutral-700">{HERO_CONTENT.HEADING_LINE_2}</span>
 					</h2>
 					
 					<p class="text-base sm:text-lg text-neutral-600 font-light max-w-md mx-auto lg:mx-0">
-						Discover meaningful connections through intelligent matching and shared interests.
+						{HERO_CONTENT.SUBHEADING}
 					</p>
 				</div>
 				
 				<div class="flex items-center gap-3 justify-center lg:justify-start">
 					<div class="w-2 h-2 bg-neutral-400 rounded-full"></div>
 					<div class="text-neutral-500 text-sm tracking-wide font-light">
-						Launching Q4 2025
+						{APP_METADATA.LAUNCH_TEXT}
 					</div>
 				</div>
 			</div>
@@ -105,23 +107,23 @@
 			<div class="space-y-8 sm:space-y-12 flex flex-col items-center xl:items-start">
 				<div class="space-y-6 sm:space-y-8 max-w-md xl:max-w-none xl:grid xl:grid-cols-2 xl:gap-x-8 xl:gap-y-8 xl:space-y-0">
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Intelligent Matching</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">AI matches based on who you are, not how you look</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.INTELLIGENT_MATCHING.title}</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.INTELLIGENT_MATCHING.description}</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Privacy Focused</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">Private and secure, with optional anonymity</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.PRIVACY_FOCUSED.title}</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.PRIVACY_FOCUSED.description}</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Authentic Connections</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">Find people who share your core values and worldview</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.AUTHENTIC_CONNECTIONS.title}</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.AUTHENTIC_CONNECTIONS.description}</div>
 					</div>
 					
 					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">Universal Platform</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">Romance, business, creative, athletic — connections across all life domains</div>
+						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.UNIVERSAL_PLATFORM.title}</h3>
+						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.UNIVERSAL_PLATFORM.description}</div>
 					</div>
 				</div>
 			</div>
@@ -133,8 +135,8 @@
 		<div class="max-w-7xl mx-auto">
 			<div class="h-px bg-neutral-200 mb-6 sm:mb-8"></div>
 			<div class="flex justify-between items-center text-sm text-neutral-400">
-				<div>© 2025</div>
-				<div class="font-mono text-xs">v0.1</div>
+				<div>{APP_METADATA.COPYRIGHT}</div>
+				<div class="font-mono text-xs">{APP_METADATA.VERSION}</div>
 			</div>
 		</div>
 	</footer>
