@@ -35,9 +35,14 @@ export enum MetaProperties {
   OG_TITLE = 'og:title',
   OG_DESCRIPTION = 'og:description',
   OG_IMAGE = 'og:image',
+  OG_IMAGE_WIDTH = 'og:image:width',
+  OG_IMAGE_HEIGHT = 'og:image:height',
+  OG_IMAGE_ALT = 'og:image:alt',
   OG_SITE_NAME = 'og:site_name',
   OG_LOCALE = 'og:locale',
   TWITTER_CARD = 'twitter:card',
+  TWITTER_SITE = 'twitter:site',
+  TWITTER_CREATOR = 'twitter:creator',
   TWITTER_URL = 'twitter:url',
   TWITTER_TITLE = 'twitter:title', 
   TWITTER_DESCRIPTION = 'twitter:description',
@@ -100,3 +105,32 @@ export const HERO_CONTENT = {
 
 // SEO keywords
 export const SEO_KEYWORDS = 'human connections, AI matching, networking platform, meaningful relationships, smart matching, privacy-focused, social networking';
+
+// Image dimensions and metadata
+export const IMAGE_METADATA = {
+  FAVICON_WIDTH: '512',
+  FAVICON_HEIGHT: '512',
+  FAVICON_ALT: 'Humans Connect AI Logo - Letter H in modern design'
+} as const;
+
+// Social media and external links
+export const SOCIAL_LINKS = {
+  TWITTER_HANDLE: '@humansconnectai',
+  X_HANDLE: '@humansconnectai'
+} as const;
+
+// Performance and technical constants
+export const PERFORMANCE = {
+  DNS_PREFETCH: ['https://analytics.arcbjorn.com', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
+  PRELOAD_FONTS: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap'
+} as const;
+
+// Additional structured data
+export const ORGANIZATION_DATA = {
+  FOUNDING_DATE: '2024',
+  ADDRESS: {
+    COUNTRY: 'United States',
+    ADDRESS_REGION: 'Global'
+  },
+  CONTACT_TYPE: 'Customer Service'
+} as const;
