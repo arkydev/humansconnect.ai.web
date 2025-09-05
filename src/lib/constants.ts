@@ -91,7 +91,7 @@ export const FEATURES = {
   },
   UNIVERSAL_PLATFORM: {
     title: 'Universal Platform',
-    description: 'Romance, business, creative, athletic — connections across all life domains'
+    description: 'Education, business, arts, sports, romance — all life domains'
   }
 } as const;
 
