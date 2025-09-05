@@ -187,19 +187,19 @@
 		<div class="max-w-7xl mx-auto xl:grid xl:grid-cols-2 xl:gap-24 xl:h-full xl:items-center space-y-12 sm:space-y-16 xl:space-y-0">
 			
 			<!-- Hero -->
-			<section class="space-y-6 sm:space-y-8 text-center lg:text-left" aria-labelledby="hero-heading">
+			<section class="space-y-6 sm:space-y-8 text-center xl:text-left" aria-labelledby="hero-heading">
 				<div class="space-y-4 sm:space-y-6">
                         <h1 id="hero-heading" class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
                             {HERO_CONTENT.HEADING_LINE_1}<br>
                             <span class="font-normal text-neutral-700">{HERO_CONTENT.HEADING_LINE_2}</span>
                         </h1>
 					
-					<p class="text-base sm:text-lg text-neutral-600 font-light max-w-md mx-auto lg:mx-0">
+					<p class="text-base sm:text-lg text-neutral-600 font-light max-w-md mx-auto xl:mx-0">
 						{HERO_CONTENT.SUBHEADING}
 					</p>
 				</div>
 				
-				<div class="flex items-center gap-3 justify-center lg:justify-start">
+				<div class="flex items-center gap-3 justify-center xl:justify-start">
 					<div class="w-2 h-2 bg-neutral-400 rounded-full"></div>
 					<div class="text-neutral-500 text-sm tracking-wide font-light">
 						{APP_METADATA.LAUNCH_TEXT}
@@ -210,25 +210,37 @@
 			<!-- Features -->
 			<section class="space-y-8 sm:space-y-12 flex flex-col items-center xl:items-start" aria-labelledby="features-heading">
 				<h2 id="features-heading" class="sr-only">Platform Features</h2>
-				<div class="space-y-6 sm:space-y-8 max-w-md xl:max-w-none xl:grid xl:grid-cols-2 xl:gap-x-8 xl:gap-y-8 xl:space-y-0">
-					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.INTELLIGENT_MATCHING.title}</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.INTELLIGENT_MATCHING.description}</div>
+				<div class="space-y-6 sm:space-y-8 max-w-md sm:max-w-none sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 sm:space-y-0 sm:items-start">
+					<div class="flex">
+						<div class="w-0.5 bg-neutral-200 mr-4 sm:mr-6 flex-shrink-0"></div>
+						<div>
+							<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.INTELLIGENT_MATCHING.title}</h3>
+							<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.INTELLIGENT_MATCHING.description}</div>
+						</div>
 					</div>
 					
-					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.PRIVACY_FOCUSED.title}</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.PRIVACY_FOCUSED.description}</div>
+					<div class="flex">
+						<div class="w-0.5 bg-neutral-200 mr-4 sm:mr-6 flex-shrink-0"></div>
+						<div>
+							<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.PRIVACY_FOCUSED.title}</h3>
+							<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.PRIVACY_FOCUSED.description}</div>
+						</div>
 					</div>
 					
-					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.AUTHENTIC_CONNECTIONS.title}</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.AUTHENTIC_CONNECTIONS.description}</div>
+					<div class="flex">
+						<div class="w-0.5 bg-neutral-200 mr-4 sm:mr-6 flex-shrink-0"></div>
+						<div>
+							<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.AUTHENTIC_CONNECTIONS.title}</h3>
+							<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.AUTHENTIC_CONNECTIONS.description}</div>
+						</div>
 					</div>
 					
-					<div class="border-l-2 border-neutral-200 pl-4 sm:pl-6">
-						<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.UNIVERSAL_PLATFORM.title}</h3>
-						<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.UNIVERSAL_PLATFORM.description}</div>
+					<div class="flex">
+						<div class="w-0.5 bg-neutral-200 mr-4 sm:mr-6 flex-shrink-0"></div>
+						<div>
+							<h3 class="text-base sm:text-lg font-medium mb-1 sm:mb-2 text-neutral-900">{FEATURES.UNIVERSAL_PLATFORM.title}</h3>
+							<div class="text-neutral-600 text-sm leading-relaxed">{FEATURES.UNIVERSAL_PLATFORM.description}</div>
+						</div>
 					</div>
 				</div>
 			</section>
