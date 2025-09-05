@@ -36,6 +36,7 @@ export enum MetaProperties {
   OG_DESCRIPTION = 'og:description',
   OG_IMAGE = 'og:image',
   OG_SITE_NAME = 'og:site_name',
+  OG_LOCALE = 'og:locale',
   TWITTER_CARD = 'twitter:card',
   TWITTER_URL = 'twitter:url',
   TWITTER_TITLE = 'twitter:title', 
@@ -49,7 +50,8 @@ export enum MetaContent {
   TWITTER_CARD_LARGE = 'summary_large_image',
   ROBOTS_INDEX_FOLLOW = 'index, follow',
   VIEWPORT = 'width=device-width, initial-scale=1.0',
-  THEME_COLOR = '#0a0a0a'
+  THEME_COLOR = '#0a0a0a',
+  LOCALE_EN_US = 'en_US'
 }
 
 // Schema.org structured data

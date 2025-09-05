@@ -1,7 +1,41 @@
 <script lang="ts">
-	import { APP_METADATA, Urls, FILE_PATHS, MetaProperties, MetaContent, SchemaTypes, SCHEMA_DATA, FEATURES, HERO_CONTENT, SEO_KEYWORDS } from '$lib/constants';
+    import { APP_METADATA, Urls, FILE_PATHS, MetaProperties, MetaContent, SCHEMA_DATA, FEATURES, HERO_CONTENT, SEO_KEYWORDS } from '$lib/constants';
 
-	let email = '';
+    let email = '';
+
+    const jsonLd = JSON.stringify([
+        {
+            "@context": Urls.SCHEMA_CONTEXT,
+            "@type": "SoftwareApplication",
+            name: APP_METADATA.NAME,
+            description: APP_METADATA.DESCRIPTION,
+            url: Urls.SITE,
+            applicationCategory: SCHEMA_DATA.APPLICATION_CATEGORY,
+            operatingSystem: SCHEMA_DATA.OPERATING_SYSTEM,
+            offers: {
+                "@type": "Offer",
+                price: SCHEMA_DATA.PRICE,
+                priceCurrency: SCHEMA_DATA.PRICE_CURRENCY
+            },
+            creator: {
+                "@type": "Organization",
+                name: APP_METADATA.NAME
+            }
+        },
+        {
+            "@context": Urls.SCHEMA_CONTEXT,
+            "@type": "Organization",
+            name: APP_METADATA.NAME,
+            url: Urls.SITE,
+            logo: Urls.FAVICON_PNG
+        },
+        {
+            "@context": Urls.SCHEMA_CONTEXT,
+            "@type": "WebSite",
+            name: APP_METADATA.NAME,
+            url: Urls.SITE
+        }
+    ]);
 </script>
 
 <svelte:head>
@@ -13,7 +47,8 @@
 	<link rel="canonical" href={Urls.SITE} />
 	
 	<!-- Open Graph / Facebook -->
-	<meta property={MetaProperties.OG_TYPE} content={MetaContent.OG_TYPE_WEBSITE} />
+    <meta property={MetaProperties.OG_TYPE} content={MetaContent.OG_TYPE_WEBSITE} />
+    <meta property={MetaProperties.OG_LOCALE} content={MetaContent.LOCALE_EN_US} />
 	<meta property={MetaProperties.OG_URL} content={Urls.SITE} />
 	<meta property={MetaProperties.OG_TITLE} content={APP_METADATA.TITLE} />
 	<meta property={MetaProperties.OG_DESCRIPTION} content={APP_METADATA.DESCRIPTION} />
@@ -38,27 +73,8 @@
 	<link rel="preconnect" href={Urls.FONTS_STATIC_PRECONNECT} crossorigin>
 	<link href={Urls.INTER_FONT} rel="stylesheet">
 	
-	<!-- JSON-LD Structured Data -->
-	<script type="application/ld+json">
-		{
-			[SchemaTypes.CONTEXT]: Urls.SCHEMA_CONTEXT,
-			[SchemaTypes.TYPE]: SchemaTypes.SOFTWARE_APPLICATION,
-			"name": APP_METADATA.NAME,
-			"description": APP_METADATA.DESCRIPTION,
-			"url": Urls.SITE,
-			"applicationCategory": SCHEMA_DATA.APPLICATION_CATEGORY,
-			"operatingSystem": SCHEMA_DATA.OPERATING_SYSTEM,
-			"offers": {
-				[SchemaTypes.TYPE]: SchemaTypes.OFFER,
-				"price": SCHEMA_DATA.PRICE,
-				"priceCurrency": SCHEMA_DATA.PRICE_CURRENCY
-			},
-			"creator": {
-				[SchemaTypes.TYPE]: SchemaTypes.ORGANIZATION,
-				"name": APP_METADATA.NAME
-			}
-		}
-	</script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">{jsonLd}</script>
 </svelte:head>
 
 <div class="min-h-screen xl:h-screen bg-neutral-50 flex flex-col font-['Inter']">
@@ -66,8 +82,8 @@
 	<header class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-12 py-6 sm:py-8">
 		<div class="max-w-7xl mx-auto flex justify-between items-center">
 			<div class="flex items-center gap-3 sm:gap-4">
-				<div class="w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
-				<h1 class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide">{HERO_CONTENT.BRAND_NAME}</h1>
+                <div class="w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
+                <div class="text-lg sm:text-xl font-medium text-neutral-900 tracking-wide" aria-label="Humans Connect AI brand">{HERO_CONTENT.BRAND_NAME}</div>
 			</div>
 			<div class="flex items-center gap-2">
 				<div class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></div>
@@ -85,10 +101,10 @@
 			<!-- Hero -->
 			<div class="space-y-6 sm:space-y-8 text-center lg:text-left">
 				<div class="space-y-4 sm:space-y-6">
-					<h2 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
-						{HERO_CONTENT.HEADING_LINE_1}<br>
-						<span class="font-normal text-neutral-700">{HERO_CONTENT.HEADING_LINE_2}</span>
-					</h2>
+                        <h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-light text-neutral-900 leading-tight tracking-tight">
+                            {HERO_CONTENT.HEADING_LINE_1}<br>
+                            <span class="font-normal text-neutral-700">{HERO_CONTENT.HEADING_LINE_2}</span>
+                        </h1>
 					
 					<p class="text-base sm:text-lg text-neutral-600 font-light max-w-md mx-auto lg:mx-0">
 						{HERO_CONTENT.SUBHEADING}
