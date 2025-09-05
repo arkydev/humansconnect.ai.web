@@ -1,0 +1,24 @@
+Contact: https://humansconnect.ai
+Expires: 2026-09-05T00:00:00.000Z
+Encryption: https://humansconnect.ai/pgp.asc
+Acknowledgments: https://humansconnect.ai/security/acknowledgments
+Preferred-Languages: en
+Canonical: https://humansconnect.ai/.well-known/security.txt
+Policy: https://humansconnect.ai/security/policy
+
+# Security Policy
+# 
+# We take the security of Humans Connect AI seriously. 
+# If you discover a security vulnerability, please report it responsibly.
+#
+# Please do NOT report security vulnerabilities through public GitHub issues.
+#
+# Scope:
+# - All subdomains of humansconnect.ai
+# - Mobile applications
+# - API endpoints
+#
+# Out of scope:
+# - Social engineering attacks
+# - Physical attacks against our infrastructure
+# - DDoS attacks
