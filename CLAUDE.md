@@ -15,36 +15,36 @@ HumansConnect.ai is a SvelteKit 5.0 application for an AI-powered matching platf
 - **Testing**: Vitest for unit tests, Playwright for E2E tests
 - **Linting**: ESLint 9.x with TypeScript and Svelte support
 - **Formatting**: Prettier with Svelte and Tailwind plugins
-- **Package Manager**: Bun (though npm scripts are used in package.json)
+- **Package Manager**: pnpm
 
 ## Development Commands
 
 ### Development
 ```bash
-bun install              # Install dependencies
-bun run dev             # Start development server
-bun run build           # Build for production
-bun run preview         # Preview production build
+pnpm install            # Install dependencies
+pnpm dev                # Start development server
+pnpm build              # Build for production
+pnpm preview            # Preview production build
 ```
 
 ### Code Quality
 ```bash
-bun run check           # Type checking with svelte-check
-bun run check:watch     # Type checking in watch mode
-bun run format          # Format code with Prettier
-bun run lint            # Run ESLint and Prettier checks
+pnpm check              # Type checking with svelte-check
+pnpm check:watch        # Type checking in watch mode
+pnpm format             # Format code with Prettier
+pnpm lint               # Run ESLint and Prettier checks
 ```
 
 ### Testing
 ```bash
-bun run test:unit       # Run unit tests with Vitest
-bun run test:e2e        # Run E2E tests with Playwright
-bun run test            # Run both unit and E2E tests
+pnpm test:unit          # Run unit tests with Vitest
+pnpm test:e2e           # Run E2E tests with Playwright
+pnpm test               # Run both unit and E2E tests
 ```
 
 ### SvelteKit Specific
 ```bash
-bun run prepare         # Sync SvelteKit types
+pnpm prepare            # Sync SvelteKit types
 ```
 
 ## Project Structure
@@ -135,7 +135,7 @@ The homepage includes extensive SEO optimization:
 
 The project is configured for automatic deployment via GitHub Actions:
 - Builds on push to master branch
-- Uses Bun for dependency management
+- Uses pnpm for dependency management
 - Deploys static files via rsync to remote server
 - SSH key authentication for secure deployment
 

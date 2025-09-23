@@ -2,27 +2,25 @@
 # Final image size: ~3MB with nginx
 
 # Build stage
-FROM oven/bun:1.1-slim AS builder
+FROM node:20-alpine AS builder
 
 # Install build dependencies only
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache ca-certificates
 
 # Set working directory
 WORKDIR /app
 
 # Copy package files first for better layer caching
-COPY package.json bun.lockb* ./
+COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
-RUN bun install --frozen-lockfile --production=false
+RUN npm install -g pnpm && pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
 
 # Build the application
-RUN bun run build
+RUN pnpm build
 
 # Production stage - nginx Alpine
 FROM nginx:alpine-slim
