@@ -2,7 +2,7 @@
 # Final image size: ~3MB with nginx
 
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Install build dependencies only
 RUN apk add --no-cache ca-certificates
