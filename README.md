@@ -5,13 +5,13 @@ SvelteKit application for HumansConnect.ai platform.
 ## Development
 
 ```sh
-bun install
-bun run dev
+pnpm install
+pnpm dev
 ```
 
 ## Build
 
 ```sh
-bun run build
-bun run preview
+pnpm build
+pnpm preview
 ```
