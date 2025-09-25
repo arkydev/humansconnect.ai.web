@@ -15,10 +15,7 @@ RUN pnpm build
 
 FROM nginx:alpine-slim
 
-COPY --from=builder /app/dist /usr/share/nginx/html 2>/dev/null || \
-     COPY --from=builder /app/build /usr/share/nginx/html 2>/dev/null || \
-     COPY --from=builder /app/out /usr/share/nginx/html 2>/dev/null || \
-     echo "Build output not found in dist/, build/, or out/"
+COPY --from=builder /app/build /usr/share/nginx/html
 
 RUN echo 'server { \
     listen 80; \
