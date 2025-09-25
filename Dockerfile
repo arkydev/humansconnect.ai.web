@@ -1,112 +1,79 @@
-# Ultra-optimized multi-stage Dockerfile for SvelteKit static site
-# Final image size: ~3MB with nginx
+FROM node:24-alpine AS builder
 
-# Build stage
-FROM node:22-alpine AS builder
-
-# Install build dependencies only
-RUN apk add --no-cache ca-certificates
-
-# Set working directory
 WORKDIR /app
 
-# Copy package files first for better layer caching
+RUN npm install -g pnpm@latest
+
 COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies
-RUN npm install -g pnpm && pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --prefer-offline
 
-# Copy source code
 COPY . .
 
-# Build the application
+ENV NODE_ENV=production
 RUN pnpm build
 
-# Production stage - nginx Alpine
 FROM nginx:alpine-slim
 
-# Copy nginx config for static files
-COPY <<EOF /etc/nginx/nginx.conf
-user nginx;
-worker_processes auto;
-error_log /dev/stderr info;
-pid /var/run/nginx.pid;
+COPY --from=builder /app/dist /usr/share/nginx/html 2>/dev/null || \
+     COPY --from=builder /app/build /usr/share/nginx/html 2>/dev/null || \
+     COPY --from=builder /app/out /usr/share/nginx/html 2>/dev/null || \
+     echo "Build output not found in dist/, build/, or out/"
 
-events {
-    worker_connections 1024;
-}
+RUN echo 'server { \
+    listen 80; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    \
+    sendfile on; \
+    tcp_nopush on; \
+    tcp_nodelay on; \
+    keepalive_timeout 65; \
+    types_hash_max_size 2048; \
+    server_tokens off; \
+    \
+    gzip on; \
+    gzip_vary on; \
+    gzip_comp_level 6; \
+    gzip_min_length 256; \
+    gzip_proxied any; \
+    gzip_types \
+        text/plain \
+        text/css \
+        text/xml \
+        text/javascript \
+        application/json \
+        application/javascript \
+        application/xml+rss \
+        application/rss+xml \
+        application/atom+xml \
+        application/xhtml+xml \
+        application/x-font-ttf \
+        application/x-font-opentype \
+        application/vnd.ms-fontobject \
+        image/svg+xml \
+        image/x-icon; \
+    \
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|otf)$ { \
+        expires 1y; \
+        add_header Cache-Control "public, immutable"; \
+        access_log off; \
+    } \
+    \
+    location ~* \.(html)$ { \
+        expires 1h; \
+        add_header Cache-Control "public, must-revalidate"; \
+    } \
+    \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+        add_header X-Frame-Options "SAMEORIGIN" always; \
+        add_header X-Content-Type-Options "nosniff" always; \
+        add_header X-XSS-Protection "1; mode=block" always; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
 
-http {
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
+EXPOSE 80
 
-    # Optimize for static files
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    # Gzip compression
-    gzip on;
-    gzip_vary on;
-    gzip_min_length 1024;
-    gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
-
-    # Security headers
-    add_header X-Frame-Options "SAMEORIGIN" always;
-    add_header X-Content-Type-Options "nosniff" always;
-    add_header X-XSS-Protection "1; mode=block" always;
-    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-
-    server {
-        listen 8080;
-        server_name localhost;
-        root /usr/share/nginx/html;
-        index index.html;
-
-        # Security
-        server_tokens off;
-
-        # Cache static assets
-        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
-            expires 1y;
-            add_header Cache-Control "public, immutable";
-        }
-
-        # Cache HTML files but allow revalidation
-        location ~* \.html$ {
-            expires 1h;
-            add_header Cache-Control "public";
-        }
-
-        # Handle SvelteKit SPA routing
-        location / {
-            try_files \$uri \$uri/ /index.html;
-        }
-
-        # Health check endpoint
-        location /health {
-            access_log off;
-            return 200 "OK\n";
-            add_header Content-Type text/plain;
-        }
-    }
-}
-EOF
-
-# Copy built static files
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8080/health || exit 1
-
-# Set non-root user
-USER nginx
-
-# Expose port
-EXPOSE 8080
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
